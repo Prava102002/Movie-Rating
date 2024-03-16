@@ -6,7 +6,7 @@ const PORT = process.env.PORT || 5000;
 const MONGO_URL = process.env.MONGODB_URI;
 const bodyParser = require('body-parser');
 const authRoutes = require('./routes/authRoutes');
-// const movieRoutes = require('./routes/movies');
+const movieRoutes = require('./routes/movieRoutes');
 // const reviewRoutes = require('./routes/reviews');
 
 mongoose
@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 
 // Routes
 app.use('/api/users', authRoutes);
-// app.use('/api/movies', movieRoutes);
+app.use('/api/movies', movieRoutes);
 // app.use('/api/movies', reviewRoutes);
 
 
